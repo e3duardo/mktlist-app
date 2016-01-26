@@ -1,0 +1,28 @@
+﻿
+<div class="container-fluid">
+    <h1>Hi {{vm.user.firstName}}!</h1>
+
+    <div class="messageTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="message">
+            <div class="userIcon"><img src="#" data-win-bind="src: icon" /></div>
+            <div class="messageContent">
+                <div class="contactInformation">
+                    <div class="contactName" data-win-bind="textContent: name"></div>
+                    <div class="contactTime" data-win-bind="textContent: date;"></div>
+                    <!--<div class="contactTime" data-win-bind="textContent: time; style.color: readStateColor; style.fontWeight: readStateWeight"></div>-->
+                </div>
+                <div class="messagePreview" data-win-bind="textContent: supermercado;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="messageList" data-win-control="WinJS.UI.Pivot" data-win-options="{ selectedIndex: 1 }" class="wide">
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'comprar' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Comprar, template: select('.messageTemplate') }"></div>
+        </div>
+
+        <div class="pivotItem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'compradas' }">
+            <div data-win-control="WinJS.UI.Repeater" data-win-options="{ data: Sample.Compradas, template: select('.messageTemplate') }"></div>
+        </div>
+    </div>
+</div>

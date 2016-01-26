@@ -35,6 +35,11 @@
                 templateUrl: 'register/register.view.html',
                 controllerAs: 'vm'
             })
+            .when('/listas', {
+                controller: 'ListasController',
+                templateUrl: 'listas/listas.view.html',
+                controllerAs: 'vm'
+            })
 
             .otherwise({ redirectTo: '/login' });
     }
