@@ -1,0 +1,98 @@
+﻿html, body, .container-fluid, .ngview {
+    height: 100%;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+body {
+    background-color: #143066;
+    color: #fff;
+}
+
+a {
+    color: #d8d8d8;
+}
+
+    a:hover {
+        color: #808080;
+    }
+
+.form-signin {
+    height: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin-header {
+    height: 35%;
+    position: relative;
+}
+
+    .form-signin-header img {
+        position: absolute;
+        width: 85px;
+        height: 100px;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .form-signin-header h2 {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align:center;
+    }
+
+.form-signin-main {
+    height: 65%;
+    padding-bottom: 25px;
+}
+
+.form-signin-footer {
+    height: 25px;
+    margin-top: -25px;
+}
+
+.form-group {
+    margin: 0;
+}
+
+.form-signin .form-sign-a {
+    margin-bottom: 10px;
+}
+
+.form-signin .form-group .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-group .form-control-feedback {
+    margin-top: 6px;
+}
+
+.form-signin .form-group .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin .form-group input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin .form-group input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

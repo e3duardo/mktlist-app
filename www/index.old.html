@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" ng-app="mktlistAngular">
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>mktlist</title>
+
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/ui-dark.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+
+    <link href="css/index.css" rel="stylesheet" />
+
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/base.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/angular-winjs.js"></script>
+    <!--experimental-->
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div ng-view class="ngview"></div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
