@@ -30,7 +30,7 @@ to authenticate the username and password entered into the view.
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
-                    $location.path('/listas');// location to redirect after login
+                    $location.path('/lists');// location to redirect after login
                 } else {
                     FlashService.Error(response.message);
                     vm.dataLoading = false;

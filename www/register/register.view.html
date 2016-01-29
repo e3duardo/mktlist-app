@@ -1,5 +1,5 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Register</h2>
+﻿<div class="container-fluid container-padding">
+    <h2>Novo usuário</h2>
     <form name="form" ng-submit="vm.register()" role="form">
 
         <!--TODO: Traduzir help blocks-->
@@ -14,7 +14,7 @@
             <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Username is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label class="control-label" for="username">Nick: </label>
+            <label class="control-label" for="username">Nome de usuário: </label>
             <input type="text" class="form-control" id="username" ng-model="vm.user.username" required>
             <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
         </div>

@@ -1,0 +1,28 @@
+﻿<div class="container-fluid container-padding">
+    <h2>Criar lista</h2>
+    <form name="form" ng-submit="vm.register()" role="form">
+
+        <!--TODO: Traduzir help blocks-->
+        <div class="form-group" ng-class="{ 'has-error': form.title.$dirty && form.title.$error.required }">
+            <label class="control-label" for="title">Titulo: </label>
+            <input type="text" class="form-control" id="title" ng-model="vm.list.title" required>
+            <span ng-show="form.title.$dirty && form.title.$error.required" class="help-block">Title is required</span>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.store.$dirty && form.store.$error.required }">
+            <label class="control-label" for="store">Loja: </label>
+            <input type="text" class="form-control" id="store" ng-model="vm.list.store" required>
+            <span ng-show="form.store.$dirty && form.store.$error.required" class="help-block">store is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.color.$dirty && form.color.$error.required }">
+            <label class="control-label" for="color">Color: </label>
+            <input type="text" class="form-control" id="color" ng-model="vm.list.color" required>
+            <span ng-show="form.color.$dirty && form.color.$error.required" class="help-block">color is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Cadastrar</button>
+            <i ng-if="vm.dataLoading" class="fa fa-spinner fa-spin fa-lg"></i>
+            <a href="#/lists" class="btn btn-link">Cancelar</a>
+        </div>
+    </form>
+</div>

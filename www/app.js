@@ -35,12 +35,21 @@
                 templateUrl: 'register/register.view.html',
                 controllerAs: 'vm'
             })
-            .when('/listas', {
-                controller: 'ListasController',
-                templateUrl: 'listas/listas.view.html',
+            .when('/lists', {
+                controller: 'ListsController',
+                templateUrl: 'lists/lists.view.html',
                 controllerAs: 'vm'
             })
-
+            .when('/createlist', {
+                controller: 'CreateListController',
+                templateUrl: 'lists/create.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/detailslist/:listId', {// todo: descobrir um jeito de colocar do jeito certo >> /detailslist/:listId
+                controller: 'DetailsListController',
+                templateUrl: 'lists/details.view.html',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/login' });
     }
 

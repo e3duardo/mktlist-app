@@ -59,7 +59,7 @@ a {
     margin-top: -25px;
 }
 
-.form-group {
+.form-signin .form-group {
     margin: 0;
 }
 
@@ -79,6 +79,7 @@ a {
 
 .form-signin .form-group .form-control-feedback {
     margin-top: 6px;
+    color:#ccc;
 }
 
 .form-signin .form-group .form-control:focus {
