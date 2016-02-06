@@ -79,7 +79,9 @@ a {
 
 .form-signin .form-group .form-control-feedback {
     margin-top: 6px;
+    margin-right: 2px;
     color:#ccc;
+    background-color:#fff;
 }
 
 .form-signin .form-group .form-control:focus {

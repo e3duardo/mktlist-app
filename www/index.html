@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
     <meta charset="utf-8" />
     <title>mktlist</title>
@@ -14,7 +14,6 @@
 </head>
 <body>
     <div ng-view class="ngview"></div>
-
 
     <script src="scripts/holder.js"></script>
     <script src="scripts/angular.js"></script>
@@ -36,12 +35,16 @@
     <script src="app.js"></script>
     <script src="app-services/authentication.service.js"></script>
     <script src="app-services/flash.service.js"></script>
+    <script src="app-services/websql.service.js"></script>
 
     <!-- Real user service that uses an api -->
     <!-- <script src="app-services/user.service.js"></script> -->
     <!-- Fake user service for demo that uses local storage -->
-    <script src="app-services/user.service.local-storage.js"></script>
-    <script src="app-services/list.service.local-storage.js"></script>
+    <!--<script src="app-services/user.service.local-storage.js"></script>-->
+    <!--<script src="app-services/list.service.local-storage.js"></script>-->
+    <script src="app-services/user.service.websql.js"></script>
+    <script src="app-services/list.service.websql.js"></script>
+    
 
     <script src="home/home.controller.js"></script>
     <script src="login/login.controller.js"></script>
@@ -50,5 +53,7 @@
     <script src="lists/create.controller.js"></script>
     <script src="lists/details.controller.js"></script>
 
+    <!--init cordova before and angular after-->
+    <script src="scripts/index.js"></script>
 </body>
 </html>

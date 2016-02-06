@@ -28,20 +28,33 @@ Login function.
 
         function Login(username, password, callback) {
 
-            /* Dummy authentication for testing, uses $timeout to simulate api call
+            /* authentication for websql
              ----------------------------------------------*/
-            $timeout(function () {
                 var response;
-                UserService.GetByUsername(username)
+            UserService.Authenticate(username, password)
                     .then(function (user) {
-                        if (user !== null && user.password === password) {
+                        if (user.length == 1) {
                             response = { success: true };
                         } else {
-                            response = { success: false, message: 'Username or password is incorrect' };
+                            response = { success: false, message: 'Usuário ou senha incorretos!' };
                         }
                         callback(response);
                     });
-            }, 1000);
+
+            /* Dummy authentication for testing, uses $timeout to simulate api call
+             ----------------------------------------------*/
+            //$timeout(function () {
+            //    var response;
+            //    UserService.GetByUsername(username)
+            //        .then(function (user) {
+            //            if (user !== null && user.password === password) {
+            //                response = { success: true };
+            //            } else {
+            //                response = { success: false, message: 'Username or password is incorrect' };
+            //            }
+            //            callback(response);
+            //        });
+            //}, 1000);
 
             /* Use this for real authentication
              ----------------------------------------------*/

@@ -7,7 +7,7 @@
     border: none !important;
     border-radius: 0 !important;
     background: none !important;
-    overflow-y:auto;
+    overflow-y: auto;
 }
 
 .mkt-listview-item {
@@ -16,9 +16,9 @@
     margin-bottom: 2px;
     padding: 5px 10px;
     background-color: #2B2B2B;
-    background-color: rgba(43, 43, 43, 0.6)!important;
-    color:#dcdcdc!important;
-    overflow:hidden;
+    background-color: rgba(43, 43, 43, 0.6) !important;
+    color: #dcdcdc !important;
+    overflow: hidden;
 }
 
 .mkt-listview-item-ico {
@@ -32,12 +32,12 @@
     width: calc(100% - 58px);
     height: 32px;
     float: left;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .mkt-listview-item-top {
     width: 100%;
-    height:20px;
+    height: 20px;
 }
 
 .mkt-listview-item-top-title {
@@ -53,7 +53,7 @@
     text-align: right;
     font-size: 12px;
     line-height: 12px;
-    overflow:hidden;
+    overflow: hidden;
     /*color: rgba(255, 255, 255, .4);*/
 }
 
@@ -64,5 +64,15 @@
     line-height: 12px;
     overflow: hidden;
     color: #808080;
-    z-index:5;
+    z-index: 5;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 32px;
+    background:#6c6d70;
+    color:#fff;
 }

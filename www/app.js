@@ -55,6 +55,20 @@
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
     function run($rootScope, $location, $cookieStore, $http) {
+        //var db = openDatabase("mktlist", "", "mktlist", (5 * 1024 * 1024)/*5mb*/, function () {
+        //    console.log('WEBSQL: db successfully opened or created');
+        //});
+
+       // var db = $rootScope.globals.websql;
+
+        //db.transaction(function (tx) {
+        //    tx.executeSql('DROP TABLE IF EXISTS mk_user');
+        //    //tx.executeSql("CREATE TABLE IF NOT EXISTS mk_user(ID INTEGER PRIMARY KEY ASC, username TEXT, password TEXT, added_on TEXT)", [], function () {/*success*/ }, function () {/*error*/ });
+        //    //tx.executeSql("INSERT INTO mk_user(username, password, added_on) VALUES (?,?,?)", ['guest', 'guest', new Date().toUTCString()], function () {/*success*/ }, function () {/*error*/ });
+        //});
+
+        //db.close();
+
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
@@ -70,5 +84,4 @@
             }
         });
     }
-
 })();

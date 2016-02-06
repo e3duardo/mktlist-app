@@ -6,34 +6,32 @@
     "use strict";
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+    document.addEventListener("backbutton", onBackKeyDown, false);
+
+    ;
 
     function onDeviceReady() {
-        // Handle the Cordova pause and resume events
+
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ['app']);
+        });
+
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
 
+        //var dbSize = 5 * 1024 * 1024; // 5MB
+        //var db = openDatabase("mktlist", "0.1", "mktlist db", dbSize, function () {
+        //    console.info('WEBSQL: open or create database');
+        //});
 
-
-        var dbSize = 5 * 1024 * 1024; // 5MB
-
-        var db = openDatabase("mktlist", "", "mktlist", dbSize, function () {
-            console.log('   >sql: db successfully opened or created');
-        });
-
-        db.transaction(function (tx) {
-            tx.executeSql('DROP TABLE IF EXISTS mk_user');
-            tx.executeSql("CREATE TABLE IF NOT EXISTS mk_user(ID INTEGER PRIMARY KEY ASC, username TEXT, password TEXT, added_on TEXT)",
-                [], onSuccess, onError);
-            tx.executeSql("INSERT INTO mk_user(username, password, added_on) VALUES (?,?,?)", ['e3duardo', '1234', new Date().toUTCString()], onSuccess, onError);
-        });
-
-        function onSuccess(tx, data) {
-            console.log('   >sql: Query completed: ' + JSON.stringify(data));
-        }
-
-        function onError(tx, error) {
-            console.log('   >sql: Query failed: ' + error.message);
-        }
+        //db.transaction(function (tx) {
+        //    tx.executeSql("CREATE TABLE IF NOT EXISTS mk_user (ID INTEGER PRIMARY KEY ASC, firstName TEXT, lastName TEXT, username TEXT, password TEXT, date TEXT)", [],
+        //        function () { console.info('WEBSQL: create table mk_user'); },
+        //        function () { console.error('WEBSQL: error on create table mk_user'); });
+        //    tx.executeSql("CREATE TABLE IF NOT EXISTS mk_list (ID INTEGER PRIMARY KEY ASC, title TEXT, store TEXT, color TEXT, date TEXT)", [],
+        //        function () { console.info('WEBSQL: create table mk_list'); },
+        //        function () { console.error('WEBSQL: error on create table mk_list'); });
+        //});
     };
 
     function onPause() {
@@ -43,35 +41,9 @@
     function onResume() {
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
+
+    function onBackKeyDown(event) {
+        event.preventDefault();
+        console.error('error');
+    }
 })();
-
-angular.module('mktlistAngular', ['winjs', 'ngRoute'])
-            .config(['$routeProvider', function ($routeProvider) {
-                $routeProvider.
-                  when('/login', {
-                      templateUrl: '_login.html',
-                      controller: 'LoginCtrl'
-                  }).
-                  otherwise({
-                      redirectTo: '/login'
-                  });
-            }])
-            .controller('LoginCtrl', ['$scope', '$http', function ($scope, $http) {
-                $scope.submit = function () {
-                    var u = $scope.username;
-                    var p = document.getElementById('inputPassword').value;
-
-                    var dbSize = 5 * 1024 * 1024; // 5MB
-
-                    var db = openDatabase("mktlist", "", "mktlist", dbSize, function () {
-                        console.log('   >sql: db successfully opened or created');
-                    });
-
-                    db.readTransaction(function (t) {
-                        t.executeSql('SELECT * FROM mk_user WHERE username = ? AND password = ?', [u, p], function (tx, results) {
-                            console.log(results.rows);
-                            document.getElementById('title').innerHTML = results.rows;
-                        }, function (tx, error) { console.log(error) })
-                    });
-                };
-            }])
