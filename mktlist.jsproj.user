@@ -13,7 +13,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ReferenceCachePath>C:\Users\e3dua\AppData\Local\Temp\5yox41np_mktlist_refcache</ReferenceCachePath>
-    <ShowAllFiles>false</ShowAllFiles>
+    <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Windows Phone (Universal)'">
     <DebuggerFlavor>WindowsMobileEmulator</DebuggerFlavor>

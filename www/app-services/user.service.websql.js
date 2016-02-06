@@ -51,7 +51,7 @@ scripts section at the bottom of the index.html file.
             WebSqlService.ExecuteSql("SELECT * FROM mk_user WHERE id=?",
                         [id],
                         function (tx, rs) {
-                            if (rs.rows == 1)
+                            if (rs.rows.length == 1)
                                 deferred.resolve(rs.rows[0]);
                         },
                         handleError);
@@ -82,19 +82,12 @@ scripts section at the bottom of the index.html file.
         }
 
         function Update(user) {
-            //var deferred = $q.defer();
+            var deferred = $q.defer();
 
-            //var users = getUsers();
-            //for (var i = 0; i < users.length; i++) {
-            //    if (users[i].id === user.id) {
-            //        users[i] = user;
-            //        break;
-            //    }
-            //}
-            //setUsers(users);
-            //deferred.resolve();
+            // TODO: make code for update
+            deferred.resolve();
 
-            //return deferred.promise;
+            return deferred.promise;
         }
 
         function Delete(id) {

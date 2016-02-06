@@ -7,8 +7,7 @@
 .git/
 bin/
 bld/
-merges/
 packages/
 plataforms/
-plugins/
+plugins/cordova-plugin-websql.vs/
 res/

@@ -4,7 +4,7 @@
     <p><a href="#/createlist" class="btn btn-primary">Criar lista</a></p>
 
     <div class="list-group mkt-listview">
-        <a ng-repeat="x in vm.allLists" href  ng-click="vm.go('/detailslist/1' )"  class="list-group-item mkt-listview-item" >
+        <a ng-repeat="x in vm.allLists" href  ng-click="vm.go('/detailslist/' + x.ID)"  class="list-group-item mkt-listview-item" >
             <div class="mkt-listview-item-ico" style="background-color:{{x.color}};"><!--<img src="{{x.icon}}" />--></div>
             <div class="mkt-listview-item-text">
                 <div class="mkt-listview-item-top">

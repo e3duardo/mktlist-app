@@ -31,6 +31,10 @@
                 tx.executeSql("CREATE TABLE IF NOT EXISTS mk_list (ID INTEGER PRIMARY KEY ASC, title TEXT, store TEXT, color TEXT, date TEXT)", [],
                     function () { console.info('WEBSQL: create table mk_list'); },
                     function () { console.error('WEBSQL: error on create table mk_list'); });
+
+                tx.executeSql("CREATE TABLE IF NOT EXISTS mk_listitem (ID INTEGER PRIMARY KEY ASC, list_id INTEGER, product TEXT, amount REAL, price REAL, date TEXT)", [],
+                    function () { console.info('WEBSQL: create table mk_listitem'); },
+                    function () { console.error('WEBSQL: error on create table mk_listitem'); });
             });
         }
 

@@ -15,12 +15,6 @@
         initController();
 
 
-        function go(path) {
-            console.log('go '+path)
-            $location.path(path);
-        };
-
-
         function initController() {
             loadAllLists();
         }
@@ -31,5 +25,9 @@
                     vm.allLists = lists;
                 });
         }
+
+        function go(path) {
+            $location.path(path);
+        };
     }
 })();
