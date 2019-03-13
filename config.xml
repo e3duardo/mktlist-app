@@ -106,5 +106,13 @@
   <platform name="wp8">
     <splash src="res/screens/wp8/SplashScreenImage.jpg" width="480" height="800" />
   </platform>
-  
+  <preference name="android-minSdkVersion" value="19" />
+  <preference name="android-maxSdkVersion" value="23" />
+  <preference name="android-targetSdkVersion" value="19" />
+  <preference name="Fullscreen" value="False" />
+  <preference name="KeepRunning" value="True" />
+  <preference name="ShowTitle" value="True" />
+  <preference name="InAppBrowserStorageEnabled" value="True" />
+  <preference name="SuppressesIncrementalRendering" value="True" />
+  <preference name="Orientation" value="portrait" />
 </widget>
